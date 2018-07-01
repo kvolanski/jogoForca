@@ -42,12 +42,15 @@ public class JogoForcaController {
 
             boolean perdeQtdeTentativas = true;
 
+            String letraEscolhidaString = Character.toString(letraEscolhida);
 
             letrasUtilizadas += " " + letraEscolhida;
 
             System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
 
-
+            if (letrasUtilizadas.contains(letraEscolhidaString)){
+                
+            }
 
 
             System.out.println("\nA Palavra é ");
