@@ -45,7 +45,9 @@ public class JogoForcaController {
 
             letrasUtilizadas += " " + letraEscolhida;
 
-            System.out.println(letrasUtilizadas);
+            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
+
+
 
 
             System.out.println("\nA Palavra é ");
