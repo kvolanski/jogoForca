@@ -8,7 +8,7 @@ public class JogoForca {
     private String nomeJogador;
     private boolean ganhou;
     private int tentativas;
-    private String letrasUtilizadas = "";
+
 
     public int getTentativas() {
         return tentativas;
@@ -50,11 +50,4 @@ public class JogoForca {
         this.letra = letra;
     }
 
-    public String getLetrasUtilizadas() {
-        return letrasUtilizadas;
-    }
-
-    public void setLetrasUtilizadas(String letrasUtilizadas) {
-        this.letrasUtilizadas = letrasUtilizadas;
-    }
 }

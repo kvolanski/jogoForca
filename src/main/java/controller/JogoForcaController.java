@@ -31,7 +31,7 @@ public class JogoForcaController {
 
     public void estrutura(int qtdeTentativas, String palavra, char acertos[]) {
 
-        String letrasUtilizadas = jogoForca.getLetrasUtilizadas();
+        String letrasUtilizadas = "";
 
         do { //faça isso enquanto...
 
@@ -44,12 +44,6 @@ public class JogoForcaController {
 
             String letraEscolhidaString = Character.toString(letraEscolhida);
 
-            letrasUtilizadas += " " + letraEscolhida;
-
-            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
-
-
-            System.out.println("\nA Palavra é ");
             for (int i = 0; i < palavra.length(); i++) {
 
                 if (letraEscolhida == palavra.charAt(i)) {
@@ -58,12 +52,21 @@ public class JogoForcaController {
                 }
             }
 
+            if (letrasUtilizadas.contains(letraEscolhidaString.substring(0))){
+                System.out.println("Você já utilizou essa letra antes");
+            }else
             if (perdeQtdeTentativas) {
                 qtdeTentativas--; //executa só se o usuario não acertar a letra nessa rodada
             }
 
+            letrasUtilizadas += " " + letraEscolhida;
+            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
+
+
             jogoForca.setGanhou(true);
 
+
+            System.out.println("\nA Palavra é ");
             for (int i = 0; i < palavra.length(); i++) {
                 if (acertos[i] == 0) {
                     System.out.print(" _ "); //se a letra não estiver na posição certa vai desenhar um _
