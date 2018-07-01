@@ -48,10 +48,6 @@ public class JogoForcaController {
 
             System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
 
-            if (letrasUtilizadas.contains(letraEscolhidaString)){
-                
-            }
-
 
             System.out.println("\nA Palavra é ");
             for (int i = 0; i < palavra.length(); i++) {

@@ -28,8 +28,7 @@ public class Menu {
             System.out.println("Bem vindo ao jogo da forca");
             System.out.println("Digite seu nome:");
             jogoForca.setNomeJogador(scanner.nextLine());
-            System.out.println("Boa sorte " + jogoForca.getNomeJogador());
-            String nomeJogador = jogoForca.getNomeJogador();
+            System.out.println("Boa sorte " + jogoForca.getNomeJogador().toUpperCase());
 
             return palavra;
     }
