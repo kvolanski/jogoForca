@@ -35,10 +35,8 @@ public class JogoForcaController {
 
         do { //faça isso enquanto...
 
-            System.out.println("\nVocê tem " + qtdeTentativas + " tentativas" ); //Exibe a quatidade de tentativas que você tem
-            System.out.println("\nQual letra ou palavra quer chutar?");
-            jogoForca.setLetra(scanner.next().toUpperCase().charAt(0)); //se digitar uma String,ele pega apenas o primeiro caracter
-            char letraEscolhida = jogoForca.getLetra(); // pega a variavel que foi digitada e coloca em outra variavel pra ficar mais facil
+
+           char letraEscolhida =  menu.chutaLetra(qtdeTentativas);
 
             boolean perdeQtdeTentativas = true;
 
@@ -52,24 +50,27 @@ public class JogoForcaController {
                 }
             }
 
-            if (letrasUtilizadas.contains(letraEscolhidaString.substring(0))){
+            if (letrasUtilizadas.contains(letraEscolhidaString)){
                 System.out.println("Você já utilizou essa letra antes");
             }else
             if (perdeQtdeTentativas) {
                 qtdeTentativas--; //executa só se o usuario não acertar a letra nessa rodada
             }
 
-            if(letrasUtilizadas.contains(letraEscolhidaString.substring(0))){
+            if(letrasUtilizadas.contains(letraEscolhidaString)){
 
             }else {
                 letrasUtilizadas += " " + letraEscolhida;
             }
             System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
 
+
+
             jogoForca.setGanhou(true);
 
 
             System.out.println("\nA Palavra é ");
+
             for (int i = 0; i < palavra.length(); i++) {
                 if (acertos[i] == 0) {
                     System.out.print(" _ "); //se a letra não estiver na posição certa vai desenhar um _

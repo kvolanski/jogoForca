@@ -14,6 +14,19 @@ public class Menu {
 
 
 
+
+        public Character chutaLetra(int qtdeTentativas){
+
+            System.out.println("\nVocê tem " + qtdeTentativas + " tentativas" ); //Exibe a quatidade de tentativas que você tem
+            System.out.println("\nQual letra ou palavra quer chutar?");
+            jogoForca.setLetra(scanner.next().toUpperCase().charAt(0)); //se digitar uma String,ele pega apenas o primeiro caracter
+            char letraEscolhida = jogoForca.getLetra(); // pega a variavel que foi digitada e coloca em outra variavel pra ficar mais facil
+
+            return letraEscolhida;
+
+        }
+
+
         public String menuInicial(){
 
             System.out.println("Digite a palavra que deverá ser adivinhada:");
@@ -23,7 +36,6 @@ public class Menu {
                 for (int i = 0; i < 50; i++) {
                     System.out.println("");
                 }
-
 
             System.out.println("Bem vindo ao jogo da forca");
             System.out.println("Digite seu nome:");
