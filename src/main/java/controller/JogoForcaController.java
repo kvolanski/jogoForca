@@ -59,9 +59,12 @@ public class JogoForcaController {
                 qtdeTentativas--; //executa só se o usuario não acertar a letra nessa rodada
             }
 
-            letrasUtilizadas += " " + letraEscolhida;
-            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
+            if(letrasUtilizadas.contains(letraEscolhidaString.substring(0))){
 
+            }else {
+                letrasUtilizadas += " " + letraEscolhida;
+            }
+            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
 
             jogoForca.setGanhou(true);
 
