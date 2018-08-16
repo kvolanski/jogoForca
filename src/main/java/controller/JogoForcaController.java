@@ -4,6 +4,8 @@ import entidade.JogoForca;
 
 import menu.Menu;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class JogoForcaController {
@@ -16,6 +18,7 @@ public class JogoForcaController {
 
 
     public char [] desenhaLinha (String palavra){
+
 
         char acertos[] = new char[palavra.length()];
         for (int i = 0;i < acertos.length;i++){
@@ -33,6 +36,10 @@ public class JogoForcaController {
 
         String letrasUtilizadas = "";
 
+        List<Character> listaLetras = new ArrayList<Character>();
+
+
+
         do { //faça isso enquanto...
 
 
@@ -40,7 +47,8 @@ public class JogoForcaController {
 
             boolean perdeQtdeTentativas = true;
 
-            String letraEscolhidaString = Character.toString(letraEscolhida);
+           // String letraEscolhidaString = Character.toString(letraEscolhida);
+            listaLetras.add(letraEscolhida);
 
             for (int i = 0; i < palavra.length(); i++) {
 
@@ -50,19 +58,25 @@ public class JogoForcaController {
                 }
             }
 
-            if (letrasUtilizadas.contains(letraEscolhidaString)){
+            if (listaLetras.contains(letraEscolhida)){
                 System.out.println("Você já utilizou essa letra antes");
+//
+//
+//                if (letrasUtilizadas.contains(letraEscolhidaString)){
+//                System.out.println("Você já utilizou essa letra antes");
+
+
             }else
-            if (perdeQtdeTentativas) {
+            if (!perdeQtdeTentativas) {
                 qtdeTentativas--; //executa só se o usuario não acertar a letra nessa rodada
             }
 
-            if(letrasUtilizadas.contains(letraEscolhidaString)){
+            if(listaLetras.contains(letraEscolhida)){
 
             }else {
-                letrasUtilizadas += " " + letraEscolhida;
+                listaLetras.add(letraEscolhida);
             }
-            System.out.println(" Você já utilizou essas letras: " + letrasUtilizadas);
+            System.out.println(" Você já utilizou essas letras: " + listaLetras);
 
 
 
